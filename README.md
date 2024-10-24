@@ -1,6 +1,8 @@
 `fly secrets set TS_AUTHKEY="tskey-"`
 
 largely a copy from: https://github.com/fly-apps/tailscale-router
+And https://community.fly.io/t/connecting-your-fly-apps-to-your-tailscale-tailnet/17828
+and https://tailscale.com/kb/1132/flydotio
 
 # Deploy
 

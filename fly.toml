@@ -6,15 +6,19 @@ kill_timeout = 5
 mounts = []
 primary_region = "ord"
 
-[build]
-image = "tailscale/tailscale"
-
-[processes]
-# work around their busted container
-app = "sh -c \"export PATH=$PATH:/usr/local/bin; containerboot\""
-
 [env]
 # TS_AUTHKEY set via secret
-# TS_EXTRA_ARGS = "--advertise-tags tag:flyio" # not allowed (maybe due to free tier)
+TS_EXTRA_ARGS = "--advertise-tags tag:flyio --accept-routes --accept-dns"
 TS_HOSTNAME = "jphenow-flyio"
 TS_ROUTES = "fdaa::3/128,fdaa:0:2b6::/48"
+
+[http_service]
+auto_start_machines = true
+auto_stop_machines = "off"
+force_https = true
+internal_port = 8080
+min_machines_running = 1
+[http_service.concurrency]
+hard_limit = 250
+soft_limit = 200
+type = "requests"
