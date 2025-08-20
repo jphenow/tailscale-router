@@ -6,5 +6,5 @@ set -euo pipefail
 /app/tailscale up --authkey=$TS_AUTHKEY $TS_EXTRA_ARGS --hostname=$TS_HOSTNAME --advertise-routes=$TS_ROUTES
 
 # sh -c "export PATH=$PATH:/usr/local/bin; containerboot" &
-caddy reverse-proxy --from :8080 --to flyio:4000 --insecure &
-caddy reverse-proxy --from :8081 --to daggett:2283 --insecure
+caddy reverse-proxy --from :4000 --to flyio:4000 --insecure &
+caddy reverse-proxy --from :2283 --to daggett:2283 --insecure
