@@ -16,9 +16,10 @@ TS_ROUTES = "fdaa::3/128,fdaa:0:2b6::/48"
 auto_start_machines = true
 auto_stop_machines = "off"
 force_https = true
-internal_port = 8080
+# internal_port = 8080
+internal_port = 4000
 min_machines_running = 1
-[http_service.concurrency]
-hard_limit = 250
-soft_limit = 200
-type = "requests"
+# [http_service.concurrency]
+# hard_limit = 250
+# soft_limit = 200
+# type = "requests"

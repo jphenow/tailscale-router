@@ -1,0 +1,19 @@
+:4000 {
+    reverse_proxy macbook-pro:3003 {
+        transport http {
+            keepalive 60s
+            dial_timeout 10s
+            response_header_timeout 30s
+        }
+    }
+}
+
+:2283 {
+    reverse_proxy daggett:2283 {
+        transport http {
+            keepalive 60s
+            dial_timeout 10s
+            response_header_timeout 30s
+        }
+    }
+}
